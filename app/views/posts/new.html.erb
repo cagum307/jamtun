@@ -1,0 +1,12 @@
+<h1>NEWS新規作成ページ</h1>
+
+<%= form_with(model: @post, local: true) do |f| %>
+  <%= f.label :title, 'タイトル' %>
+  <%= f.text_field :title %>
+  <%= f.label :text, '本文' %>
+  <%= f.text_field :text %>
+
+  <%= f.submit '投稿' %>
+<% end %>
+
+<%= link_to '管理者画面に戻る', posts_path %>

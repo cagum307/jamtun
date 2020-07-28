@@ -1,0 +1,8 @@
+<h1>NEWS一覧</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.id, post %> : <%= post.title %></li>
+    <li><%= post.text %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,17 @@
+<h1>管理者用ページ：NEWS一覧</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.id, post %> : <%= post.title %></li>
+    <li><%= post.text %></li>
+    <li><%= link_to '編集する', edit_post_path(post) %></li>
+    <%= link_to '削除する', post_path(post), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+  <% end %>
+</ul>
+
+
+<%= link_to '新規NEWSの投稿', new_post_path %>
+
+<ul>
+  <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+</ul>
